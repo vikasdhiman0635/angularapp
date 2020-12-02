@@ -1,0 +1,60 @@
+<section class="getintouch">
+    <div class="container modern-form">
+        <div class="text-center">
+            <h4 style="color: #212529;font-size: 45px;">Register User</h4>
+        </div>
+<form [formGroup]="rForm" (ngSubmit)="addpost(rForm.value)">
+<div class="container">
+    <div class="row">
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+                <label for="Mname">First Name :</label>
+                <input id="Mname" class="form-control input input-tr" type="text" formControlName="fname" autofocus/>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+                <label for="email">Last Name :</label>
+                <input id="email" class="form-control input input-tr" type="text" formControlName="lname"/>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+                <label for="Comapanyname">Email :</label>
+                <input id="Comapanyname" class="form-control input input-tr" type="text" formControlName="email"/>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+                <label for="mobile">Phone No. :</label>
+                <input id="mobile" class="form-control input input-tr" formControlName="mobile" type="phoneno"/>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="img" style="border: 1px solid black; width: 150px; height: 35px; border-radius: 25px; text-align: center; padding-top: 5px;">+Upload Image</label>
+                <input id="img" (change)="fileupload($event)" accept="images" style="display: none;" type="file"/>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6" *ngIf="imagedata!=null">
+            <div class="form-group">
+                <img src="{{imagedata}}" alt="" width="100px" height="100px" class="float-right">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <input type="submit" value="Register Now" class="btn btn-success">
+        </div>
+    </div>
+</div>
+</form>
+</div>
+</section>
